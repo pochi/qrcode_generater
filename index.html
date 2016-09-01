@@ -1,0 +1,31 @@
+<html>
+
+  <header>
+    <title>QRcode generater</title>
+  </header>
+
+  <script type="text/javascript" src="./javascripts/jquery-3.1.0.min.js"></script>
+  <script type="text/javascript" src="./javascripts/jquery.qrcode.min.js"></script>
+
+  <script type="text/javascript">
+    $(function() {
+      $("#create").click(function() {
+        var width = $('#width').val();
+        var height = $('#width').val();
+        var url  = $('#url').val();
+        $('#qrcode').qrcode({width: width, height: height, text: url});
+      });
+    });
+  </script>
+
+  <body>
+    <div id="qrcode"></div>
+    <input type="text" id="url" placeholder="URL" />
+    </br>
+    <input type="text" id="width" placeholder="画像の横のサイズ" />
+    </br>
+    <input type="text" id="length" placeholder="画像の縦のサイズ" />
+    </br>
+    <input type='submit' id='create' value="作成" />
+  </body>
+</html>
